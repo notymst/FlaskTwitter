@@ -27,15 +27,15 @@ Use a production WSGI server instead.
 
 ## 機能一覧
  ### 導入
-以下でこのアプリのstatic_file(index.html)が呼ばれる
+以下でこのアプリのstatic_file(index.html)が呼ばれる  
 http://127.0.0.1:8000/
 ```
 Flask
 ```
 ### 指定したユーザの直近ツイート検索
-以下で指定したユーザの直近ツイート情報がjson形式で返却される。
-http://127.0.0.1:8000/tweet/<ここにアカウントID>
-例
+以下で指定したユーザの直近ツイート情報がjson形式で返却される。  
+http://127.0.0.1:8000/tweet/<ここにアカウントID>  
+例  
 http://127.0.0.1:8000/tweet/matsu_bouzu
 ```
 {
@@ -55,7 +55,7 @@ http://127.0.0.1:8000/tweet/matsu_bouzu
     ]
 }
 ```
-存在しないアカウントを入力するとエラーとなる
+存在しないアカウントを入力するとエラーとなる  
 http://127.0.0.1:8000/tweet/matsu_bouzu_hoge
 ```
 {
