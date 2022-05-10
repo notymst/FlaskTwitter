@@ -3,9 +3,9 @@ pythonのマイクロフレームワーク**Flask**を利用した簡易的なtw
 
 
 ## 参考サイト
-https://aiacademy.jp/media/?p=57  
-https://tech-lab.sios.jp/archives/21400  
-https://qiita.com/Kobayashi2019/items/03e31ee50b924f428e71
+https://aiacademy.jp/media/?p=57<br>
+https://tech-lab.sios.jp/archives/21400<br>
+https://qiita.com/Kobayashi2019/items/03e31ee50b924f428e71<br>
 
 ## ローカル実行コマンド
 FlaskTutorial 配下に移動して以下コマンドを実行
@@ -28,15 +28,15 @@ Use a production WSGI server instead.
 
 ## 機能一覧
  ### 導入
-以下でこのアプリのstatic_file(index.html)が呼ばれる  
+以下でこのアプリのstatic_file(index.html)が呼ばれる<br>
 http://127.0.0.1:8000/
 ```
 Flask
 ```
 ### 指定したユーザの直近ツイート検索
-以下で指定したユーザの直近ツイート情報がjson形式で返却される。  
-http://127.0.0.1:8000/tweet/<ここにアカウントID>  
-例  
+以下で指定したユーザの直近ツイート情報がjson形式で返却される。<br>
+http://127.0.0.1:8000/tweet/<ここにアカウントID><br>
+例<br>
 http://127.0.0.1:8000/tweet/matsu_bouzu
 ```
 {
@@ -56,7 +56,7 @@ http://127.0.0.1:8000/tweet/matsu_bouzu
     ]
 }
 ```
-存在しないアカウントを入力するとエラーとなる  
+存在しないアカウントを入力するとエラーとなる<br>
 http://127.0.0.1:8000/tweet/matsu_bouzu_hoge
 ```
 {
