@@ -3,7 +3,7 @@ pythonのマイクロフレームワーク**Flask**を利用した簡易的なtw
 
 
 ## 参考サイト
-https://aiacademy.jp/media/?p=57
+https://aiacademy.jp/media/?p=57  
 https://tech-lab.sios.jp/archives/21400
 
 ## ローカル実行コマンド
