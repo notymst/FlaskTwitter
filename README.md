@@ -5,6 +5,7 @@ pythonのマイクロフレームワーク**Flask**を利用した簡易的なtw
 ## 参考サイト
 https://aiacademy.jp/media/?p=57  
 https://tech-lab.sios.jp/archives/21400
+https://qiita.com/Kobayashi2019/items/03e31ee50b924f428e71
 
 ## ローカル実行コマンド
 FlaskTutorial 配下に移動して以下コマンドを実行

@@ -1,3 +1,6 @@
+import sys
+sys.dont_write_bytecode = True # __pycache__を作らせないためはじめに記述
+
 from flask import *
 import tweepy
 import static.config as config
