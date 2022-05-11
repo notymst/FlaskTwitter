@@ -1,0 +1,27 @@
+{# mypage.html マイページ #}
+
+{% extends "base.tpl" %} {# 親テンプレートを指定 #}
+
+{% block title %}マイページ{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block info %}
+		<h3>マイページ</h3>
+		{{myinfo.name}}(<a href="https://twitter.com/{{myinfo.screen_name}}">@{{myinfo.screen_name}}</a>)<br>
+		つぶやき数：{{myinfo.statuses_count}}<br>
+		フォロー：{{myinfo.friends_count}}<br>
+		フォロワー：{{myinfo.followers_count}}<br>
+		お気に入り数：{{myinfo.favourites_count}}<br>
+		{{ super() }}
+{% endblock %}
+
+{% block content %}
+			<h3>コンテンツ部分</h3>
+      {{ message }}
+      <a href="/action?function=deleteTweet">ツイート全削除</a>
+      <a href="/action?function=ff">フォロー返してない人一括リムーブ</a>
+
+{% endblock %}

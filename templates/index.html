@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TOP</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><a href="/mypage">mypageに移動</a><br></td>
+        <td></td>
+        <td></td>
+        <td>{{ list|sum(attribute='followers_count') }}</td>
+        <td>{{ list|sum(attribute='friends_count') }}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>名前</td>
+        <td>アカウント名</td>
+        <td>つぶやき</td>
+        <td>フォロワー数</td>
+        <td>フォロー数</td>
+        <td>いいね数</td>
+      </tr>
+
+      {% for Info in list | sort(attribute='followers_count', reverse=True) %}
+      <tr>
+          <td>{{Info.name}}</td>
+          <td><a href="https://twitter.com/{{Info.screen_name}}">@{{Info.screen_name}}</a></td>
+          <td>{{Info.statuses_count}}</td>
+          <td>{{Info.followers_count}}</td>
+          <td>{{Info.friends_count}}</td>
+          <td>{{Info.favourites_count}}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
+  </body>
+</html>
