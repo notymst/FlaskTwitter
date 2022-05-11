@@ -10,7 +10,15 @@ https://aiacademy.jp/media/?p=57<br>
 https://tech-lab.sios.jp/archives/21400<br>
 https://qiita.com/Kobayashi2019/items/03e31ee50b924f428e71<br>
 
-## ローカル実行コマンド
+## ローカル実行
+static/configにツイッターで必要な以下を記載
+- consumer_key
+- consumer_secret
+- access_token
+- access_token_secret
+
+
+
 FlaskTutorial 配下に移動して以下コマンドを実行
 ```
 python apps.py
