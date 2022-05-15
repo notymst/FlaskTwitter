@@ -65,7 +65,7 @@ def tweet(accountId):
 
 @app.route('/mypage')
 def mypage():
-    # セッションにAT,ASがなかった場合はNoneを返す
+    # セッションにaccess_token,access_token_secretがなかった場合はNoneを返す
     if session.get('access_token') is None or session.get('access_token_secret') is None:
         return template('mypage.html', myinfo = None)
 
