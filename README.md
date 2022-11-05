@@ -1,14 +1,16 @@
 # FlaskTwitter
-pythonのマイクロフレームワーク**Flask**を利用した簡易的なツイッタ関連の以下機能を搭載
-- フォロー数、フォロワー数などの比較機能
+pythonのマイクロフレームワーク**Flask**を利用した簡易的なツイッター関連の以下機能を搭載
+- フォロー数、フォロワー数などの比較機能(config配下を操作する必要あり)
 - ツイート削除、フォローしていない人を一括でリムーブする機能（現在メンテナンス中）
 - つぶやき取得API
+- ブロックしているユーザーのリスト取得API
 
 
 ## 参考サイト
 https://aiacademy.jp/media/?p=57<br>
 https://tech-lab.sios.jp/archives/21400<br>
 https://qiita.com/Kobayashi2019/items/03e31ee50b924f428e71<br>
+https://www.geeksforgeeks.org/python-api-blocks_ids-in-tweepy/<br>
 
 ## ローカル実行
 static/configにツイッターで必要な以下を記載
@@ -73,6 +75,11 @@ http://127.0.0.1:8000/tweet/matsu_bouzu_hoge
 }
 ```
 
+### その他機能
+マイページに行きログインを行うと以下の機能が使える<br>
+http://127.0.0.1:8000/mypage
+- ブロックしているユーザーのリスト取得API
+- フォロー数、フォロワー数などの比較機能(config配下を操作する必要あり)
 
 ## アプリ終了時
 以下のコマンドを入力する
