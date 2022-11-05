@@ -10,7 +10,8 @@
 
 {% block info %}
 		<h3>マイページ</h3>
-		{{myinfo.name}}(<a href="https://twitter.com/{{myinfo.screen_name}}">@{{myinfo.screen_name}}</a>)<br>
+		アカウント名：{{myinfo.name}}<br>
+    スクリーンネーム：<a href="https://twitter.com/{{myinfo.screen_name}}">@{{myinfo.screen_name}}</a><br>
 		つぶやき数：{{myinfo.statuses_count}}<br>
 		フォロー：{{myinfo.friends_count}}<br>
 		フォロワー：{{myinfo.followers_count}}<br>
@@ -19,9 +20,11 @@
 {% endblock %}
 
 {% block content %}
-			<h3>コンテンツ部分</h3>
-      {{ message }}
-      <a href="/action?function=deleteTweet">ツイート全削除</a>
-      <a href="/action?function=ff">フォロー返してない人一括リムーブ</a>
+			<h3>コンテンツ</h3>
+      {{message}}
+      <a href="/getBlockedList">ブロックしているユーザーのリストをJSONで取得</a><br><br>
 
+      <a href="/deleteTweet">ツイート全削除（メンテナンス中）</a><br><br>
+
+      <a href="/remove">フォロー返してない人一括リムーブ（メンテナンス中）</a><br><br>
 {% endblock %}

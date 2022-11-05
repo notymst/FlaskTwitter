@@ -15,10 +15,8 @@ def index():
     try:
         # インスタンス作成
         ins = model.Model()
-
         # アカウントの情報を配列に格納
         list = ins.getUserInfo(config.ids)
-
         # htmlを返却
         return template('index.html', list = list)
     except:
@@ -30,7 +28,6 @@ def tweet(accountId):
     try:
         # インスタンス作成
         ins = model.Model()
-
         # tweepyのツイッターオブジェクト(api)を取得
         tweepyApi = ins.getApi(config.access_token, config.access_token_secret)
 
@@ -72,27 +69,55 @@ def mypage():
     try:
         # インスタンス作成
         ins = model.Model()
-        # 表示用
+        # 自分のデータ表示(api.me)用に取得
         api = ins.getApi(session.get('access_token'), session.get('access_token_secret'))
         # htmlを返却
         return template('mypage.html', myinfo = api.me())
     except:
+        # エラー用のhtnlを返却
         return template('error.html', msg = 'mypageのエラー')
 
-@app.route('/action')
-def action():
+@app.route('/getBlockedList')
+def getBlockedList():
     try:
-        # どの関数が呼ばれているかを見る
-        function = request.args.get('function')
         # インスタンス作成
         ins = model.Model()
-        # メソッドを動的に呼び出す
-        result = getattr(ins, function)(session.get('access_token'), session.get('access_token_secret'))
-        # 表示用
-        api = ins.getApi(session.get('access_token'), session.get('access_token_secret'))
+        # アカウントの情報を配列に格納
+        blockList = ins.getBlockedList()
+        # jsonifyでjsonに変換して表示
+        return jsonify({"numberOfBlockedUsers": len(blockList), "blockedUserId": blockList})
+
+    except:
+        # エラー用のhtnlを返却
+        return template('error.html', msg = 'getBlockedListのエラー')
+
+@app.route('/deleteTweet')
+def deleteTweet():
+    try:
+        # インスタンス作成
+        ins = model.Model()
+        # ツイートを削除
+        ins.deleteTweet()
+        # 実行結果のメッセージを表示
         return template('mypage.html', myinfo = api.me(), message = result)
     except:
-        return template('error.html', msg = 'action/function=' + str(function) + 'のエラー')
+        # エラー用のhtnlを返却
+        return template('error.html', msg = 'deleteTweetのエラー')
+
+@app.route('/remove')
+def remove():
+    try:
+        # インスタンス作成
+        ins = model.Model()
+        # アカウントの情報を配列に格納
+        ins.remove()
+        # 実行結果のメッセージを表示
+        return template('mypage.html', myinfo = api.me(), message = result)
+
+    except:
+        # エラー用のhtnlを返却
+        return template('error.html', msg = 'removeのエラー')
+
 
 @app.route('/login')
 def login():
@@ -106,6 +131,7 @@ def login():
         #リダイレクト
         return redirect(redirect_url)
     except:
+        # エラー用のhtnlを返却
         return template('error.html', msg = 'loginのエラー')
 
 @app.route('/logout')
@@ -137,5 +163,6 @@ def callback():
         return redirect(url_for('mypage'))
 
     except:
+        # エラー用のhtnlを返却
         return template("error.html", msg = 'callbackのエラー')
-app.run(debug=True)
+app.run(debug=True, port=8000)
