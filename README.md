@@ -6,6 +6,13 @@ pythonのマイクロフレームワーク**Flask**を利用した簡易的な�
 - ブロックしているユーザーのリスト取得API
 
 
+# 対応バージョン
+3.9.1で動作確認済
+```
+~ % python --version
+Python 3.9.1
+```
+
 ## 参考サイト
 https://aiacademy.jp/media/?p=57<br>
 https://tech-lab.sios.jp/archives/21400<br>
@@ -18,8 +25,6 @@ static/configにツイッターで必要な以下を記載
 - consumer_secret
 - access_token
 - access_token_secret
-
-
 
 FlaskTutorial 配下に移動して以下コマンドを実行
 ```
