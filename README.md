@@ -6,7 +6,19 @@ pythonのマイクロフレームワーク**Flask**を利用した簡易的な�
 - ブロックしているユーザーのリスト取得API
 
 
-# 対応バージョン
+# 環境構築
+リポジトリをclone
+```
+git clone git@github.com:notymst/FlaskTwitter.git
+```
+FlaskTwitterディレクトリに移動しrequirements.txtを利用しpipでの一括インストールを行う
+```
+% pwd
+/~~~/FlaskTwitter
+% pip install -r requirements.txt
+```
+
+# 対応Pythonバージョン
 3.9.1で動作確認済
 ```
 ~ % python --version
@@ -18,6 +30,7 @@ https://aiacademy.jp/media/?p=57<br>
 https://tech-lab.sios.jp/archives/21400<br>
 https://qiita.com/Kobayashi2019/items/03e31ee50b924f428e71<br>
 https://www.geeksforgeeks.org/python-api-blocks_ids-in-tweepy/<br>
+https://note.nkmk.me/python-pip-install-requirements/<br>
 
 ## ローカル実行
 static/configにツイッターで必要な以下を記載
